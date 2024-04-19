@@ -1,11 +1,12 @@
 package com.iuri.mercadinho.service;
 
 import com.iuri.mercadinho.dto.ProdutoRequest;
-import com.iuri.mercadinho.exception.NotFoundException;
 import com.iuri.mercadinho.model.Produto;
 import com.iuri.mercadinho.repository.ProdutoRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import java.util.List;
 
@@ -30,8 +31,9 @@ public class ProdutoService {
     }
 
     public Produto atualizar(Integer id, ProdutoRequest produtoRequest){
-        pegarPorId(id);
-        return produtoRepository.save(Produto.converterParaProduto(produtoRequest));
+        Produto produtoSalvo = pegarPorId(id);
+        BeanUtils.copyProperties(produtoRequest, produtoSalvo, "id");
+        return produtoRepository.save(produtoSalvo);
     }
 
     public void deletar(Integer id){
