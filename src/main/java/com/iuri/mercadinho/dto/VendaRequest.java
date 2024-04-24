@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemPedidoRequest {
+public class VendaRequest {
 
     private LocalDate data;
     private Integer quanntidade;

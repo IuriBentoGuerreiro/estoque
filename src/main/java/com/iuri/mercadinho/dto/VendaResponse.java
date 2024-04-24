@@ -1,6 +1,6 @@
 package com.iuri.mercadinho.dto;
 
-import com.iuri.mercadinho.model.ItemPedido;
+import com.iuri.mercadinho.model.Venda;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,14 +12,14 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ItemPedidoResponse {
+public class VendaResponse {
 
     private Integer id;
     private LocalDate data;
     private Integer quanntidade;
 
-    public static ItemPedidoResponse converterParaResponse(ItemPedido pedido){
-        return ItemPedidoResponse.builder()
+    public static VendaResponse converterParaResponse(Venda pedido){
+        return VendaResponse.builder()
                 .id(pedido.getId())
                 .data(LocalDate.now())
                 .quanntidade(pedido.getQuanntidade())

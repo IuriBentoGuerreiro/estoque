@@ -1,6 +1,6 @@
 package com.iuri.mercadinho.model;
 
-import com.iuri.mercadinho.dto.ItemPedidoRequest;
+import com.iuri.mercadinho.dto.VendaRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "item_pedido")
+@Table(name = "venda")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class ItemPedido {
+public class Venda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +26,8 @@ public class ItemPedido {
     @Column(name = "quantidade")
     private Integer quanntidade;
 
-    public static ItemPedido converterParaItemPedido(ItemPedidoRequest pedidoRequest){
-        return ItemPedido.builder()
+    public static Venda converterParaItemPedido(VendaRequest pedidoRequest){
+        return Venda.builder()
                 .data(LocalDate.now())
                 .quanntidade(pedidoRequest.getQuanntidade())
                 .build();
