@@ -13,4 +13,5 @@ public class ItemVendaRequest {
 
     private Venda venda;
     private Produto produto;
+    private Integer quantidade;
 }

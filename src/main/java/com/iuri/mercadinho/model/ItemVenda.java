@@ -24,11 +24,14 @@ public class ItemVenda {
     @JoinColumn(name = "produto_id")
     @ManyToOne
     private Produto produto;
+    @Column(name = "quantidade")
+    private Integer quantidade;
 
     public static ItemVenda converterParaItemVenda(ItemVendaRequest itemVendaRequest){
         return ItemVenda.builder()
                 .venda(itemVendaRequest.getVenda())
                 .produto(itemVendaRequest.getProduto())
+                .quantidade(itemVendaRequest.getQuantidade())
                 .build();
     }
 }
