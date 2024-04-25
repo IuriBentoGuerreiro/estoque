@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "venda")
@@ -24,12 +25,14 @@ public class Venda {
     @Column(name = "data")
     private LocalDate data;
     @Column(name = "quantidade")
-    private Integer quanntidade;
+    private Integer quantidade;
+    @OneToMany
+    @JoinColumn(name = "produto_id")
+    private List<ItemVenda> venda;
 
-    public static Venda converterParaItemPedido(VendaRequest pedidoRequest){
+    public static Venda converterParaVenda(VendaRequest vendaRequest){
         return Venda.builder()
                 .data(LocalDate.now())
-                .quanntidade(pedidoRequest.getQuanntidade())
                 .build();
     }
 }

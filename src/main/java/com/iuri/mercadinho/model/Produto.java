@@ -31,7 +31,6 @@ public class Produto {
     public static Produto converterParaProduto(ProdutoRequest produtoRequest){
         return Produto.builder()
                 .nome(produtoRequest.getNome())
-                .quantidade(produtoRequest.getQuantidade())
                 .preco(produtoRequest.getPreco())
                 .build();
     }
