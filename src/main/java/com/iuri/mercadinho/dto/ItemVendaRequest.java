@@ -12,6 +12,5 @@ import lombok.NoArgsConstructor;
 public class ItemVendaRequest {
 
     private Integer quantidadeVenda;
-    private Venda venda;
     private Produto produtoId;
 }

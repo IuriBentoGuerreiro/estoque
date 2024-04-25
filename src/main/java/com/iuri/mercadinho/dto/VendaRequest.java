@@ -1,10 +1,12 @@
 package com.iuri.mercadinho.dto;
 
+import com.iuri.mercadinho.model.ItemVenda;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -12,5 +14,6 @@ import java.time.LocalDate;
 public class VendaRequest {
 
     private LocalDate data;
-    private Integer quanntidadeEstoque;
+    private Integer quanntidadeVenda;
+    private List<ItemVenda> vendas;
 }

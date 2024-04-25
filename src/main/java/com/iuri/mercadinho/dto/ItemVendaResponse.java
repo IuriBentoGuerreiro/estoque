@@ -16,7 +16,6 @@ public class ItemVendaResponse {
 
     private Integer id;
     private Integer quantidadeVenda;
-    private Venda venda;
     private Produto produtoId;
 
     public static ItemVendaResponse converterParaResponse(ItemVenda itemVenda){

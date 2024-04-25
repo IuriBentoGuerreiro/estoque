@@ -24,8 +24,8 @@ public class Venda {
     private Integer id;
     @Column(name = "data")
     private LocalDate data;
-    @Column(name = "quantidade_estoque")
-    private Integer quantidadeEstoque;
+    @Column(name = "quantidade_venda")
+    private Integer quantidadeVenda;
     @OneToMany
     @JoinColumn(name = "vendas")
     private List<ItemVenda> itemVenda;
@@ -33,7 +33,7 @@ public class Venda {
     public static Venda converterParaVenda(VendaRequest vendaRequest){
         return Venda.builder()
                 .data(LocalDate.now())
-                .quantidadeEstoque(vendaRequest.getQuanntidadeEstoque())
+                .quantidadeVenda(vendaRequest.getQuanntidadeVenda())
                 .build();
     }
 }
