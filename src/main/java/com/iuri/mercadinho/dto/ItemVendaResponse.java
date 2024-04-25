@@ -15,16 +15,15 @@ import lombok.NoArgsConstructor;
 public class ItemVendaResponse {
 
     private Integer id;
+    private Integer quantidadeVenda;
     private Venda venda;
-    private Produto produto;
-    private Integer quantidade;
+    private Produto produtoId;
 
     public static ItemVendaResponse converterParaResponse(ItemVenda itemVenda){
         return ItemVendaResponse.builder()
                 .id(itemVenda.getId())
-                .venda(itemVenda.getVenda())
-                .produto(itemVenda.getProduto())
-                .quantidade(itemVenda.getQuantidade())
+                .quantidadeVenda(itemVenda.getQuantidadeVenda())
+                .produtoId(itemVenda.getProdutoId())
                 .build();
     }
 }

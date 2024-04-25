@@ -12,5 +12,5 @@ import java.time.LocalDate;
 public class VendaRequest {
 
     private LocalDate data;
-    private Integer quanntidade;
+    private Integer quanntidadeEstoque;
 }

@@ -24,15 +24,16 @@ public class Venda {
     private Integer id;
     @Column(name = "data")
     private LocalDate data;
-    @Column(name = "quantidade")
-    private Integer quantidade;
+    @Column(name = "quantidade_estoque")
+    private Integer quantidadeEstoque;
     @OneToMany
-    @JoinColumn(name = "produto_id")
-    private List<ItemVenda> venda;
+    @JoinColumn(name = "vendas")
+    private List<ItemVenda> itemVenda;
 
     public static Venda converterParaVenda(VendaRequest vendaRequest){
         return Venda.builder()
                 .data(LocalDate.now())
+                .quantidadeEstoque(vendaRequest.getQuanntidadeEstoque())
                 .build();
     }
 }
