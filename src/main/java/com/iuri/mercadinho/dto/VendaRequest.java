@@ -1,6 +1,5 @@
 package com.iuri.mercadinho.dto;
 
-import com.iuri.mercadinho.model.ItemVenda;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +14,6 @@ public class VendaRequest {
 
     private LocalDate data;
     private Integer quanntidadeVenda;
-    private List<ItemVenda> vendas;
+    private String cliente;
+    private List<ItemVendaRequest> vendas;
 }

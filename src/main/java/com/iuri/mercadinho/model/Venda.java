@@ -1,5 +1,6 @@
 package com.iuri.mercadinho.model;
 
+import com.iuri.mercadinho.dto.ItemVendaRequest;
 import com.iuri.mercadinho.dto.VendaRequest;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,6 +27,8 @@ public class Venda {
     private LocalDate data;
     @Column(name = "quantidade_venda")
     private Integer quantidadeVenda;
+    @Column(name = "cliente")
+    private String cliente;
     @OneToMany
     @JoinColumn(name = "vendas")
     private List<ItemVenda> itemVenda;
@@ -34,6 +37,7 @@ public class Venda {
         return Venda.builder()
                 .data(LocalDate.now())
                 .quantidadeVenda(vendaRequest.getQuanntidadeVenda())
+                .cliente(vendaRequest.getCliente())
                 .build();
     }
 }

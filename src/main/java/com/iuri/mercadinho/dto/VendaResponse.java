@@ -18,14 +18,16 @@ public class VendaResponse {
 
     private Integer id;
     private LocalDate data;
-    private Integer quanntidadeVenda;
-    private List<ItemVenda> vendas;
+    private Integer quanntidade;
+    private String cliente;
+    private List<ItemVendaRequest> vendas;
 
     public static VendaResponse converterParaResponse(Venda venda){
         return VendaResponse.builder()
                 .id(venda.getId())
                 .data(LocalDate.now())
-                .quanntidadeVenda(venda.getQuantidadeVenda())
+                .quanntidade(venda.getQuantidadeVenda())
+                .cliente(venda.getCliente())
                 .build();
     }
 }

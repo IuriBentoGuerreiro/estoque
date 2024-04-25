@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "item_venda")
 @Data
@@ -19,16 +21,20 @@ public class ItemVenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "quantidade_venda")
-    private Integer quantidadeVenda;
-    @JoinColumn(name = "produto_id")
+    @Column(name = "quantidade")
+    private Integer quantidade;
+    @Column(name = "preco")
+    private BigDecimal preco;
     @ManyToOne
-    private Produto produtoId;
+    @JoinColumn(name = "id_produto", referencedColumnName = "id")
+    private Produto produto;
+    @ManyToOne
+    @JoinColumn(name = "id_venda", referencedColumnName = "id")
+    private Venda venda;
 
     public static ItemVenda converterParaItemVenda(ItemVendaRequest itemVendaRequest){
         return ItemVenda.builder()
-                .quantidadeVenda(itemVendaRequest.getQuantidadeVenda())
-                .produtoId(itemVendaRequest.getProdutoId())
+                .quantidade(itemVendaRequest.getQuantidade())
                 .build();
     }
 }
