@@ -1,0 +1,16 @@
+[33m6bff309[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{0}: pull: Fast-forward
+[33m49bac56[m HEAD@{1}: reset: moving to 49bac56
+[33m6bff309[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m HEAD@{2}: commit: ajutes em models e DTOs
+[33m115ffdc[m HEAD@{3}: commit: implementa VendaService e VendaController
+[33ma0548b4[m HEAD@{4}: commit: deleta ItemVendaService e ItemVendaController
+[33m2cbe0fc[m HEAD@{5}: commit: implementa ItemVendaService
+[33m61f495d[m HEAD@{6}: commit: implementa itemVendaRepository
+[33mb779104[m HEAD@{7}: commit: implementa itemVenda e DTOs de ItemVenda
+[33m40ab7fe[m HEAD@{8}: commit: troca nome de entidade itemPedido para Venda
+[33m49bac56[m HEAD@{9}: commit: implementa SwaggerConfig
+[33mee59a5c[m HEAD@{10}: commit: implementa controller
+[33m4a29060[m HEAD@{11}: commit: implementa service e pacote exception
+[33me284fa2[m HEAD@{12}: commit: implementa conexao com banco de dados
+[33mb4d5420[m HEAD@{13}: commit: implementa DTOs
+[33m985ec64[m HEAD@{14}: commit: implementa ProdutoRepository
+[33mf61abe4[m HEAD@{15}: commit (initial): implementa model

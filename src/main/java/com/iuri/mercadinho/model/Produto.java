@@ -24,7 +24,4 @@ public class Produto {
     private Integer quantidade;
     @Column(name = "preco")
     private BigDecimal preco;
-
-
-
 }

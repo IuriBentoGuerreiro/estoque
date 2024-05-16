@@ -1,18 +1,12 @@
 package com.iuri.mercadinho.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "item_pedido")
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
-
 public class ItemPedido {
 
     @Id
