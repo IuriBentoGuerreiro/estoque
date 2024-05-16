@@ -27,6 +27,7 @@ public class Produto {
     private Integer quantidade;
     @Column(name = "preco")
     private BigDecimal preco;
+<<<<<<< HEAD
 
     public static Produto converterParaProduto(ProdutoRequest produtoRequest){
         return Produto.builder()
@@ -35,3 +36,6 @@ public class Produto {
                 .build();
     }
 }
+=======
+}
+>>>>>>> 8dd4299 (implementa Venda e VendaRepository)

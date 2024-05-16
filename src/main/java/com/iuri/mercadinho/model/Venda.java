@@ -1,5 +1,6 @@
 package com.iuri.mercadinho.model;
 
+<<<<<<< HEAD
 import com.iuri.mercadinho.dto.ItemVendaRequest;
 import com.iuri.mercadinho.dto.VendaRequest;
 import jakarta.persistence.*;
@@ -9,18 +10,28 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+=======
+import jakarta.persistence.*;
+import lombok.Data;
+
+>>>>>>> 8dd4299 (implementa Venda e VendaRepository)
 import java.util.List;
 
 @Entity
 @Table(name = "venda")
+<<<<<<< HEAD
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
+=======
+@Data
+>>>>>>> 8dd4299 (implementa Venda e VendaRepository)
 public class Venda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
     @Column(name = "id")
     private Integer id;
     @Column(name = "data")
@@ -40,4 +51,10 @@ public class Venda {
                 .cliente(vendaRequest.getCliente())
                 .build();
     }
+=======
+    private Integer id;
+    private String cliente;
+    @OneToMany
+    private List<ItemPedido> itemPedido;
+>>>>>>> 8dd4299 (implementa Venda e VendaRepository)
 }
