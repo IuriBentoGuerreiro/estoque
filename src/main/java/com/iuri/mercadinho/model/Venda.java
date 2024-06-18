@@ -1,6 +1,8 @@
 package com.iuri.mercadinho.model;
 
+import com.iuri.mercadinho.dto.VendaRequest;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.List;
 @Entity
 @Table(name = "venda")
 @Data
+@Builder
 public class Venda {
 
     @Id
@@ -16,4 +19,11 @@ public class Venda {
     private String cliente;
     @OneToMany
     private List<ItemPedido> itemPedido;
+
+    public Venda converter(VendaRequest vendaRequest){
+        return Venda.builder()
+                .cliente(vendaRequest.getCliente())
+                .itemPedido(vendaRequest.getItemPedido())
+                .build();
+    }
 }
