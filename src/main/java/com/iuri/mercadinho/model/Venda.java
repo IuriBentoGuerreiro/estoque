@@ -17,7 +17,8 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String cliente;
-    @OneToMany
+
+    @OneToMany(mappedBy = "venda")
     private List<ItemPedido> itemPedido;
 
     public Venda converter(VendaRequest vendaRequest){

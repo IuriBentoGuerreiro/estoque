@@ -15,7 +15,7 @@ public class VendaResponse {
     private String cliente;
     private List<ItemPedido> itemPedido;
 
-    public VendaResponse converter(Venda venda){
+    public static VendaResponse converter(Venda venda){
         return VendaResponse.builder()
                 .id(venda.getId())
                 .cliente(venda.getCliente())
