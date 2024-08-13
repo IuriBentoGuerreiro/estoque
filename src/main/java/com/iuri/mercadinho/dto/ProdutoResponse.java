@@ -19,7 +19,7 @@ public class ProdutoResponse {
     private Integer quantidade;
     private BigDecimal preco;
 
-    public static ProdutoResponse converterParaResponse(Produto produto){
+    public static ProdutoResponse converter(Produto produto){
         return ProdutoResponse.builder()
                 .id(produto.getId())
                 .nome(produto.getNome())

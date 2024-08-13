@@ -21,26 +21,26 @@ public class ProdutoController {
     @Operation(summary = "Cadastrar produto")
     @PostMapping
     public ProdutoResponse salvar(@RequestBody ProdutoRequest produtoRequest){
-        return ProdutoResponse.converterParaResponse(produtoService.salvar(produtoRequest));
+        return ProdutoResponse.converter(produtoService.salvar(produtoRequest));
     }
 
     @Operation(summary = "Pegar produto por id")
     @GetMapping("/{id}")
     public ProdutoResponse pegarPorId(@PathVariable Integer id){
-        return ProdutoResponse.converterParaResponse(produtoService.pegarPorId(id));
+        return ProdutoResponse.converter(produtoService.pegarPorId(id));
     }
 
     @Operation(summary = "Listar produtos")
     @GetMapping
     public List<ProdutoResponse> listar(){
         return produtoService.listar().stream()
-                .map(produto -> ProdutoResponse.converterParaResponse(produto)).toList();
+                .map(ProdutoResponse::converter).toList();
     }
 
     @Operation(summary = "Atualizar produto")
     @PutMapping("/{id}")
     public ProdutoResponse atualizar(@PathVariable Integer id, @RequestBody ProdutoRequest produtoRequest){
-        return ProdutoResponse.converterParaResponse(produtoService.atualizar(id, produtoRequest));
+        return ProdutoResponse.converter(produtoService.atualizar(id, produtoRequest));
     }
 
     @Operation(summary = "Deletar produto")

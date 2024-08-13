@@ -1,6 +1,6 @@
 package com.iuri.mercadinho.dto;
 
-import lombok.AllArgsConstructor;
+import com.iuri.mercadinho.model.ItemVenda;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,4 +11,5 @@ import java.util.List;
 public class VendaRequest {
 
     private String cliente;
+    private List<ItemVenda> itemVendas;
 }

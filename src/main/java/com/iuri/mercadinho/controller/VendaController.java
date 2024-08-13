@@ -13,7 +13,4 @@ public class VendaController {
 
     @Autowired
     private VendaService vendaService;
-
-    @PostMapping
-    }
 }

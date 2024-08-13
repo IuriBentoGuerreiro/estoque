@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 public class ItemVendaRequest {
 
     private Integer idProduto;
+    private Integer idVenda;
     private Integer quantidade;
     private BigDecimal preco;
 }

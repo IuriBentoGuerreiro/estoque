@@ -22,7 +22,7 @@ public class ItemVendaResponse {
     private Integer idProduto;
     private String produtoDescricao;
 
-    public static ItemVendaResponse converterParaResponse(ItemVenda itemVenda){
+    public static ItemVendaResponse converter(ItemVenda itemVenda){
         return ItemVendaResponse.builder()
                 .id(itemVenda.getId())
                 .quantidade(itemVenda.getQuantidade())

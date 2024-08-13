@@ -13,6 +13,4 @@ public class VendaService {
     @Autowired
     private VendaRepository vendaRepository;
 
-
-    }
 }

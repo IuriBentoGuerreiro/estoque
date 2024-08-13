@@ -32,9 +32,12 @@ public class ItemVenda {
     @JoinColumn(name = "id_venda", referencedColumnName = "id")
     private Venda venda;
 
-    public static ItemVenda converterParaItemVenda(ItemVendaRequest itemVendaRequest){
+    public static ItemVenda converter(ItemVendaRequest itemVendaRequest){
         return ItemVenda.builder()
                 .quantidade(itemVendaRequest.getQuantidade())
+                .preco(itemVendaRequest.getPreco())
+                .produto(new Produto(itemVendaRequest.getIdProduto()))
+                .venda(new Venda(itemVendaRequest.getIdVenda()))
                 .build();
     }
 }

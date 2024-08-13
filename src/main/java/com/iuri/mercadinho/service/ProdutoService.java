@@ -17,7 +17,7 @@ public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
     public Produto salvar(ProdutoRequest produtoRequest){
-        return produtoRepository.save(Produto.converterParaProduto(produtoRequest));
+        return produtoRepository.save(Produto.converter(produtoRequest));
     }
 
     public Produto pegarPorId (Integer id){
